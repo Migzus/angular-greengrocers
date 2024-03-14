@@ -1,0 +1,16 @@
+<div class="cart--item-list-container">
+    <ul *ngFor="let item of storeService.cart; index as i" class="item-list cart--item-list">
+      <li>
+        <img
+          class="cart--item-icon"
+          src="assets/icons/{{ item.id }}.svg"
+          alt="broken"
+        />
+        <p>{{ storeService.getItemName(item.id) }}</p>
+        <button class="quantity-btn remove-btn center" (click)="adjustQuantity(i, -1)">-</button>
+        <span class="quantity-text center">{{ item.amount }}</span>
+        <button class="quantity-btn add-btn center" (click)="adjustQuantity(i, 1)">+</button>
+      </li>
+    </ul>
+  </div>
+  
